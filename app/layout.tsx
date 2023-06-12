@@ -10,6 +10,7 @@ import ToasterProvider from './providers/ToasterProvider';
 import LoginModal from './components/modals/LoginModal';
 import { Toaster } from 'react-hot-toast';
 import getCurrentUser from './actions/getCurrentUser';
+import RentModal from './components/modals/RentModal';
 
 
 export const metadata = {
@@ -35,6 +36,7 @@ export default async function RootLayout({
           {/* <Toaster /> */}
           <ToasterProvider />
           <RegistrerModal />
+          <RentModal />
           <LoginModal />
           <Navbar currentUser = { currentUser } /> 
         {/* </ClientOnly> */}
