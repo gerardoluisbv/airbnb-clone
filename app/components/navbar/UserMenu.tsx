@@ -10,12 +10,15 @@ import { signOut } from 'next-auth/react';
 import { User } from '@prisma/client';
 // import RentModal from '../modals/RentModal';
 import useRentModal from '@/app/hooks/useRentModal';
+import { useRouter } from 'next/navigation';
+import { SafeUser } from '@/app/types';
 
 interface UserMenuProps {
-  currentUser?: User | null
+  currentUser?: SafeUser | null
 }
 
 const UserMenu: React.FC <UserMenuProps> = ( { currentUser } ) => {  
+  const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
@@ -101,26 +104,26 @@ const UserMenu: React.FC <UserMenuProps> = ( { currentUser } ) => {
               <>
                 <MenuItem 
                   label="My trips" 
-                  onClick={() => {}}
-                  // onClick={() => router.push('/trips')}
+                  // onClick={() => {}}
+                  onClick={() => router.push('/trips')}
                 />
                 <MenuItem 
                   label="My favorites" 
-                  onClick={() => {}}
+                  // onClick={() => {}}
 
-                  // onClick={() => router.push('/favorites')}
+                  onClick={() => router.push('/favorites')}
                 />
                 <MenuItem 
                   label="My reservations" 
-                  onClick={() => {}}
+                  // onClick={() => {}}
 
-                  // onClick={() => router.push('/reservations')}
+                  onClick={() => router.push('/reservations')}
                 />
                 <MenuItem 
                   label="My properties" 
-                  onClick={() => {}}
+                  // onClick={() => {}}
 
-                  // onClick={() => router.push('/properties')}
+                  onClick={() => router.push('/properties')}
                 />
                 <MenuItem 
                   label="Airbnb your home"
