@@ -42,9 +42,10 @@ export default async function RootLayout({
           <LoginModal />
           <Navbar currentUser = { currentUser } /> 
         {/* </ClientOnly> */}
-        <div className='pb-20 pt-28'>
+        <div className='pb-20 pt-28 min-h-screen'>
           {children}
         </div>
+      <footer className='text-center text-gray-500'> Developed by gerardoluisbv.com | ©2023 </footer>
       </body>
     </html>
   )
